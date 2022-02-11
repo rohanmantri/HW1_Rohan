@@ -161,12 +161,12 @@
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
     ##          k       err
-    ## result.1 2 13115.992
-    ## result.2 3 10958.993
-    ## result.3 4 10577.554
-    ## result.4 5 10002.574
-    ## result.5 6  9705.304
-    ## result.6 7  9845.751
+    ## result.1 2 11347.811
+    ## result.2 3 10700.584
+    ## result.3 4  9969.071
+    ## result.4 5  9397.875
+    ## result.5 6  9338.352
+    ## result.6 7  9137.392
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-13-2.png)
 
@@ -181,12 +181,12 @@
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
     ##          k      err
-    ## result.1 2 26977.08
-    ## result.2 3 27427.95
-    ## result.3 4 28596.11
-    ## result.4 5 28959.61
-    ## result.5 6 29289.40
-    ## result.6 7 29419.34
+    ## result.1 2 31507.21
+    ## result.2 3 25134.10
+    ## result.3 4 24041.15
+    ## result.4 5 22248.57
+    ## result.5 6 21628.44
+    ## result.6 7 21446.99
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-2.png)
 
@@ -194,7 +194,7 @@
     ##  Range:  
     ##  Limits:    0 --    1
 
-    ## [1] 2
+    ## [1] 8
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-3.png)![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-4.png)
 
