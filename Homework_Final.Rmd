@@ -5,7 +5,7 @@ date: "10/02/2022"
 output: md_document
 ---
 
-```{r Setup}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 library(tidyverse)
 library(ggplot2)
@@ -22,7 +22,7 @@ library(dplyr)
 
 * 1.
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 ABIA <- read_csv("C:\\Users\\mantr\\Desktop\\Mona\\Masters\\Applications\\University of Texas at Austin\\Spring 22\\Data Mining\\Homework\\ABIA.csv")
 
 ABIA$DepartureHour <- round(ABIA$DepTime/100, 0)
@@ -31,13 +31,13 @@ ABIA$DepartureHour <- round(ABIA$DepTime/100, 0)
 
 * Best time of the day to fly in or out of Austin is 5-7 AM
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 ABIA %>%group_by(DepartureHour) %>% summarise(mean_dep_delay = mean(DepDelay, na.rm=TRUE)) %>% arrange(mean_dep_delay)
 ```
 
 * The departure delay during the best time of the day to avoid delays (5-7AM) doesn't change that much for different Airlines
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 mean_delay_by_hours <- ABIA %>% group_by(DepartureHour, UniqueCarrier) %>% summarise(mean_dep_delay = mean(DepDelay, na.rm=TRUE)) %>% arrange(mean_dep_delay) 
 
 ggplot(mean_delay_by_hours) + geom_col(aes(x=DepartureHour, y=mean_dep_delay)) + facet_wrap(~UniqueCarrier) + labs(title = "Mean Departure Delay (Hours) by Airline") + xlab("Departure Time") + ylab("Mean Departure Delay")
@@ -45,7 +45,7 @@ ggplot(mean_delay_by_hours) + geom_col(aes(x=DepartureHour, y=mean_dep_delay)) +
 ```
 * Best time of the year is Fall and Summer to fly in or out of Austin. We see high delays in Spring and Winter, maybe due to holidays.
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 ABIA <- ABIA %>% mutate(Season = ifelse(ABIA$Month %in% c(12, 1, 2), "Winter", ifelse(ABIA$Month %in% c(3, 4, 5), "Spring", ifelse(ABIA$Month %in% c(6, 7, 8), "Summer", "Fall"))))
 
 mean_dep_delay_by_season <- ABIA %>% group_by(Season, Dest) %>% summarise(mean_dep_delay = mean(DepDelay, na.rm=TRUE)) %>% arrange(mean_dep_delay) 
@@ -55,7 +55,7 @@ ggplot(mean_dep_delay_by_season, aes(Season, mean_dep_delay)) + geom_col()
 ```
 * By grouping flying activities by destinations and sorting the data we observed that the top 6 most popular destinations are DAL (Dallas), DFW (Dallas), IAH (Houston), PHX (Pheonix), DEN (Denver), and ORD (Illinois). The bar graph shows high average departure delay in Spring especially for Dallas and Illinois. All of the 6 destinations commonly show least average departure delay in Fall.
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 ABIA %>% group_by(Dest) %>% summarise(count = n()) %>% arrange(desc(count)) 
 
 top_dest <- c("DAL", "DFW", "IAH", "PHX", "DEN", "ORD")
@@ -68,7 +68,7 @@ ggplot(mean_dep_delay_by_season_top_dest, aes(Season, mean_dep_delay)) + geom_co
 
 * 2A.
 
-```{r 2A.}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 billboard <- read.csv("C:\\Users\\mantr\\Desktop\\Mona\\Masters\\Applications\\University of Texas at Austin\\Spring 22\\Data Mining\\Homework\\billboard.csv")
 
@@ -84,7 +84,7 @@ billboard %>%
 
 * 2B.
 
-```{r 2B.}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 plot_df = billboard %>% select(song_id, year) %>% distinct() %>% group_by(year) %>% count()
 plot_df = plot_df %>% filter(year != 1958 & year != 2021)
@@ -98,7 +98,7 @@ plot(plot_df$year, plot_df$n, 'l', lwd = 2, col = "magenta",
 
 * 2C.
 
-```{r 2C.}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 billboard %>% filter(weeks_on_chart >= 10) %>% select(performer, year) %>% group_by(year) %>% 
   count()
@@ -115,7 +115,7 @@ ggplot(data = b, aes(y = performer, x = n, fill = as.factor(performer))) + geom_
 
 * 3A.
 
-```{r 3A.}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 olympics_top20 <- read.csv("C:\\Users\\mantr\\Desktop\\Mona\\Masters\\Applications\\University of Texas at Austin\\Spring 22\\Data Mining\\Homework\\olympics_top20.csv")
 
@@ -130,7 +130,7 @@ quantile(h$height, c(.95))
 
 * 3B.
 
-```{r 3B.}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 olympics_top20 %>% filter(sex == 'F') %>% select(height, event) %>%   
   group_by(event) %>% 
@@ -142,7 +142,7 @@ olympics_top20 %>% filter(sex == 'F') %>% select(height, event) %>%
 
 * 3C.
 
-```{r 3C.}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 av = olympics_top20 %>% filter(sport == 'Swimming') %>% 
   group_by(year, sex) %>% 
@@ -163,7 +163,7 @@ ggplot() + geom_line(data = mal, aes(x = year, y = avg, group = 1)) +
 * The trends for male and female differed substantially and seemed to show no correlation. The average age for male reached its peak in the year 1924 with the value of 32 years old. While the average ages for women was highest in 2000 with the value of 22.5. Overall, the trend of average ages for men declined, plateaued and then increased at a decreasing rate  over time. On the contrary, the trend rose over time for women.
 
 * 4.
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 cars <- read.csv("C:\\Users\\mantr\\Desktop\\Mona\\Masters\\Applications\\University of Texas at Austin\\Spring 22\\Data Mining\\Homework\\sclass.csv")
 
 cars_350 = cars %>% filter(trim == '350')
@@ -214,7 +214,8 @@ pred_350_test
 pred_350_test + geom_line(aes(x = mileage, y = price_350_pred), color='red', size=1.5) +
   labs(title = "Fitted Model predicting Price of Trim=350 based on Mileage")
 ```
-```{r 4.}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
 cars_65 = cars %>% filter(trim == '65 AMG')
 
