@@ -266,7 +266,7 @@ pred_65_test + geom_line(aes(x = mileage, y = price_65_pred), color='red', size=
 
 ```
 
-* trim = 350 yields a larger optimal k of 12 over 7 in case of trim = 65 AMG
+* trim = 350 yields a larger optimal k than that in case of trim = 65 AMG
 * The sample size for trim = 350 is higher than that for trim = 65. If we have larger sample size, we can afford higher k without the bias being too high. This is because you're averaging the points around the neighborhood. This is about bias-variance trade off. On the contrary, if you have small sample size, you're averaging the data points further away, causing the bias to be high.
 
 

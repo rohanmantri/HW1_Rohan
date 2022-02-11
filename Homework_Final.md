@@ -160,13 +160,13 @@
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
-    ##          k      err
-    ## result.1 2 11548.63
-    ## result.2 3 11862.76
-    ## result.3 4 11854.66
-    ## result.4 5 10824.22
-    ## result.5 6 10715.23
-    ## result.6 7 10796.08
+    ##          k       err
+    ## result.1 2 12148.045
+    ## result.2 3 10601.499
+    ## result.3 4 10857.981
+    ## result.4 5  9867.650
+    ## result.5 6  9852.413
+    ## result.6 7  9874.655
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-13-2.png)
 
@@ -174,19 +174,19 @@
     ##  Range:  
     ##  Limits:    0 --    1
 
-    ## [1] 14
+    ## [1] 9
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-13-3.png)![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-13-4.png)
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
     ##          k      err
-    ## result.1 2 26419.57
-    ## result.2 3 26078.86
-    ## result.3 4 26068.23
-    ## result.4 5 27048.34
-    ## result.5 6 26441.98
-    ## result.6 7 26386.83
+    ## result.1 2 23459.26
+    ## result.2 3 23345.20
+    ## result.3 4 23651.13
+    ## result.4 5 23620.69
+    ## result.5 6 23593.90
+    ## result.6 7 21474.33
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-2.png)
 
@@ -194,12 +194,12 @@
     ##  Range:  
     ##  Limits:    0 --    1
 
-    ## [1] 4
+    ## [1] 10
 
 ![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-3.png)![](Homework_Final_files/figure-markdown_strict/unnamed-chunk-14-4.png)
 
--   trim = 350 yields a larger optimal k of 12 over 7 in case of trim =
-    65 AMG
+-   trim = 350 yields a larger optimal k than that in case of trim = 65
+    AMG
 -   The sample size for trim = 350 is higher than that for trim = 65. If
     we have larger sample size, we can afford higher k without the bias
     being too high. This is because you’re averaging the points around
